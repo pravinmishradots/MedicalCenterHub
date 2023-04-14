@@ -1,5 +1,5 @@
 ﻿using ChildCare.DTOs;
-using ChildCareApi.Models;
+
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
@@ -63,11 +63,11 @@ namespace ChildCare.Services
             return await SendRequest<T>(request);
         }
 
-      public async  Task<BaseApiResponseModel<T>> DeleteAsync<T>(string uri)
+        public async Task<BaseApiResponseModel<T>> DeleteAsync<T>(string uri)
         {
 
             var request = new HttpRequestMessage(HttpMethod.Post, uri);
-            request.Content = new StringContent( "application/json");
+            request.Content = new StringContent("application/json");
 
             return await SendRequest<T>(request);
 

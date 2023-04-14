@@ -554,7 +554,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ChildCare.DTOs\ChildCare.DTOs.csproj" />
-    <ProjectReference Include="..\ChildCareApi\ChildCareApi.csproj" />
     <ProjectReference Include="..\ChildCareCore\ChildCareCore.csproj" />
     <ProjectReference Include="..\ChildCareInfra\ChildCareInfra.csproj" />
   </ItemGroup>

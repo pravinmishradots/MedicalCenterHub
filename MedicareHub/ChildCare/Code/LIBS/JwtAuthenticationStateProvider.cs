@@ -1,5 +1,6 @@
-﻿using ChildCare.Services;
-using ChildCareApi.Models;
+﻿using ChildCare.DTOs;
+using ChildCare.Services;
+
 using ChildCareCore.Entities;
 using Microsoft.AspNetCore.Components.Authorization;
 using System.Security.Claims;
@@ -33,7 +34,7 @@ namespace ChildCare.Code.LIBS
                 {
                     var identity = new ClaimsIdentity(new[]
                     {
-                   
+
 
                         new Claim(ClaimTypes.Name,ClaimTypes.SerialNumber, authUser.Id.ToString())
                 }, "JwtAuth");
@@ -61,7 +62,7 @@ namespace ChildCare.Code.LIBS
 
                 if (user != null)
                 {
-                  
+
                     //await SetAuthUserAndGet();
 
                     var identity = new ClaimsIdentity(new[]
@@ -86,7 +87,7 @@ namespace ChildCare.Code.LIBS
 
             async Task<AuthenticationState> LogOutAsyncCore()
             {
-         
+
 
                 currentUser = new ClaimsPrincipal(new ClaimsIdentity());
                 return new AuthenticationState(currentUser);
@@ -95,9 +96,9 @@ namespace ChildCare.Code.LIBS
 
         //private async Task<AuthUser?> SetAuthUserAndGet()
         //{
-            
-          
-          
+
+
+
         //    if (authUser != null)
         //    {
         //        authUser.Id = CurrentUser

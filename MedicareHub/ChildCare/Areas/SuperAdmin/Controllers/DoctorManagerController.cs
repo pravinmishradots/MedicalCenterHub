@@ -9,7 +9,7 @@ using ChildCareCore.Specifications;
 using ChildCareCore.Enums;
 using ChildCare.DTOs;
 using System.Drawing.Printing;
-using ChildCareApi.DTOs.GetUserRequest;
+using ChildCare.DTOs.GetUserRequest;
 using ChildCare.Models.Common;
 using static ChildCare.Code.LIBS.Enums;
 using ChildCare.Code.LIBS;
@@ -38,13 +38,13 @@ namespace ChildCare.Areas.SuperAdmin.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-           
+
             return View();
         }
 
         [HttpPost]
         public async Task<DataTableResultExt> Index(ChildCareCore.Helper.DataTableExtend dataTable, UserSpecification model)
-    
+
         {
 
             string title = "";
@@ -86,10 +86,10 @@ namespace ChildCare.Areas.SuperAdmin.Controllers
                     
                     item.CreatedOn.ToString(),//5
                    
-                }) ;
+                });
                 count++;
             }
-      
+
             return new DataTableResultExt(dataTable, table.Count(), total, table);
         }
 
@@ -111,7 +111,7 @@ namespace ChildCare.Areas.SuperAdmin.Controllers
         public IActionResult SaveDoctorData(Guid? Id, RegistrationViewModel model)
         {
 
-    
+
             return PartialView();
         }
 

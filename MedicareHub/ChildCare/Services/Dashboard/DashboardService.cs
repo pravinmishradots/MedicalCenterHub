@@ -1,6 +1,5 @@
 ﻿using ChildCare.DTOs;
-using ChildCareApi.DTOs;
-using ChildCareApi.DTOs.GetUserRequest;
+using ChildCare.DTOs.GetUserRequest;
 using System.Security.Claims;
 
 namespace ChildCare.Services.Dashboard
@@ -53,7 +52,7 @@ namespace ChildCare.Services.Dashboard
 
         public async Task<BaseApiResponseModel<List<RegistrationViewModel>>> GetAllUsersData()
         {
-  
+
             return await httpService.GetAsync<List<RegistrationViewModel>>("api/UserManagement/GetAllUserList");
         }
 
@@ -72,11 +71,11 @@ namespace ChildCare.Services.Dashboard
         #endregion
 
         #region Get List ByUserId
-        public async Task<BaseApiResponseModel<UserDto>>GetUserByUserId(Guid id)
+        public async Task<BaseApiResponseModel<UserDto>> GetUserByUserId(Guid id)
         {
-          GetUserRequestModel model = new GetUserRequestModel();
-         model.UserId = id;
-            return await httpService.PostAsync<UserDto>("api/UserManagement/GetUserById",model);
+            GetUserRequestModel model = new GetUserRequestModel();
+            model.UserId = id;
+            return await httpService.PostAsync<UserDto>("api/UserManagement/GetUserById", model);
 
         }
 
@@ -89,7 +88,7 @@ namespace ChildCare.Services.Dashboard
         public async Task<BaseApiResponseModel<RegistrationViewModel>> DeleteUserById(Guid id)
         {
 
-            return await httpService.PostAsync<RegistrationViewModel>("api/UserManagement/DeleteUserById",id);
+            return await httpService.PostAsync<RegistrationViewModel>("api/UserManagement/DeleteUserById", id);
 
         }
 
