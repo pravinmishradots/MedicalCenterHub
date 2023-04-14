@@ -1,0 +1,64 @@
+﻿@using ChildCare.Models.Common;
+@using static ChildCare.Code.LIBS.Enums;
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/SuperAdmin/Views/Shared/_AreaLayout.cshtml";
+}
+
+@*@section styles{
+
+    <link href="~/content/bootstrap-switch.css" rel="stylesheet" />
+}*@
+
+<section>
+    <div class="card">
+        <div class="card-header">
+            <div class="card-tools">
+          
+
+                <button type="button" class="btn btn-success" title="Add New Clinic" data-bs-toggle="modal" data-bs-target="#modal-add-edit-clinic" href="/SuperAdmin/ClinicManager/AddEditClinic">
+                    <i class="bi bi-align-middle "></i>  Add New Clinic
+                </button>
+            </div>
+        </div>
+
+        <div class="card-body table-responsive">
+            <table id="grid-clinic-list" class="table table-bordered table-striped table-condensed">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>#</th>
+                        <th> Name</th>
+                        <th>Email</th>
+                        <th>User</th>
+                        <th>Created</th>
+                     @*   <th>Active</th>*@
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot></tfoot>
+            </table>
+        </div>
+    </div>
+
+</section>
+
+@{
+    <partial name="_modal" model='new Modal { ID="modal-add-edit-clinic" , AreaLabeledId ="modal-add-edit-clinic-label" , Size = ModalSize.Large }' />
+    <partial name="_modal" model='new Modal { ID="modal-delete-clinic" , AreaLabeledId ="modal-delete-clinic-label" , Size = ModalSize.Small }' />
+}
+
+@section Scripts{
+    <script src="~/scripts/bootstrap-switch.js"></script>
+
+    <script src="~/custom/clinic/cliniclist.js"></script>
+
+
+
+    }
+
+
+
+

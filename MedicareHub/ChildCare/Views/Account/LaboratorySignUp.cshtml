@@ -1,0 +1,83 @@
+﻿@model ChildCare.DTOs.RegistrationViewModel
+@{
+    ViewData["Title"] = "SignUp";
+    Layout = "~/Views/Shared/_RegistrationLayout.cshtml";
+}
+
+<main class="bg-image" style="background-image: url('https://yourviewdr.com/v2/images/user_det_ban.jpg?1630333272');background-repeat:no-repeat;background-size:100% 100%;">
+    <div class="container">
+
+        <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-end py-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                        <div class="d-flex justify-content-center py-4">
+                            <a href="index.html" class="logo d-flex align-items-center w-auto">
+                                <img src="assets/img/logo.png" alt="">
+                                <span class="d-none d-lg-block">Laboratory Registration</span>
+                            </a>
+                        </div><!-- End Logo -->
+
+                        <div class="card mb-3">
+
+                            <div class="card-body">
+
+                                <div class="pt-4 pb-2">
+                                    <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5><hr />
+                                    <p class="text-center small">Enter your personal details to create account</p>
+                                </div>
+
+                                <form method="post" action="/Account/RegisterUser" class="row g-3 needs-validation" novalidate>
+                                    <input type="hidden" name="TypeId" id="TypeId" value="@(Model.TypeId == 0 ? null : Model.TypeId)" />
+                                    <input type="hidden" asp-for="UserRoleId" name="UserRoleId" id="UserRoleId" value="@(Model.UserRoleId == 0 ? null : Model.UserRoleId)" />
+                                
+
+                                        <div class="col-12">
+                                        <label for="yourName" class="form-label">Name</label>
+                                        <input type="text" asp-for="DisplayName" class="form-control" id="DisplayName" required placeholder="e.g. Andrew">
+                                        <div class="invalid-feedback">Please, enter your name!</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="yourEmail" class="form-label">Email</label>
+                                        <input type="email" name="email" class="form-control" id="yourEmail" required placeholder="example@email.com">
+                                        <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+                                    </div>
+
+
+
+                                    <div class="col-12">
+                                        <label for="Password" class="form-label">Password</label>
+                                        <input asp-for="Password" type="password" name="password" class="form-control" id="Password" required placeholder="Enter Password">
+                                        <div class="invalid-feedback">Please enter your password!</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="ConfirmPassword" class="form-label">Confirm Password</label>
+                                        <input  asp-for="ConfirmPassword" type="password" name="ConfirmPassword" class="form-control" id="ConfirmPassword" required placeholder="Confirm Password">
+                                        <div class="invalid-feedback">Please enter your password!</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="PhoneNumber" class="form-label">Phone No.</label>
+                                        <input asp-for="PhoneNumber" type="text" name="PhoneNumber" class="form-control" id="PhoneNumber" required placeholder="0123456789">
+                                        <div class="invalid-feedback">Please enter your password!</div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100" style="background-color:#a5c422" type="submit">Create Account</button>
+                                    </div>
+                                    <div class="col-12">
+                                        <p class="small mb-0">Already have an account? <a title="LoboratorySignIn" href="@Url.Action("SignIn", "Account")">Log in</a></p>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+</main><!-- End #main -->

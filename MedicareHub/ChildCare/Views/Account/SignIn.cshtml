@@ -1,0 +1,88 @@
+﻿@inject Microsoft.Extensions.Configuration.IConfiguration Configuration
+@model ChildCare.DTOs.LoginViewModel
+@{
+    ViewData["Title"] = "SignIn";
+    Layout = "~/Views/Shared/_RegistrationLayout.cshtml";
+
+}
+
+
+<main class="bg-image" style="background-image: url('https://yourviewdr.com/v2/images/user_det_ban.jpg?1630333272');height:100vh;background-repeat:no-repeat;background-size:100% 100%;">
+  
+    <div class="container">
+        <section class="section register min-vh-400 d-flex flex-column align-items-right justify-content-end py-4">
+            <div class="container">
+        <div class="row justify-content-end">
+                    <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                        <div class="d-flex justify-content-center py-4">
+                            <a href="index.html" class="logo d-flex align-items-center w-auto">
+                                @*<img src="assets/img/logo.png" alt="">*@
+                                <div class="loginbox">
+
+                                 
+                                </div>
+                            
+                            
+
+
+                            </a>
+                        </div> <!-- End Logo -->
+
+
+                        <div class="card mb-3">
+
+
+                            <div class="card-body">
+
+                                <div class="pt-5 pb-2">
+                                    <h5 class="card-title text-center pb-0 fs-4">Sign in User</h5>
+                                    @*  <p class="text-center small">Please Enter your email and  Password </p>*@
+                                    <hr />
+                                </div>
+
+
+                                <form method="post" action="/Account/SignInUser" class="row g-3 needs-validation" novalidate>
+                                    <input type="hidden" asp-for="RoleId" id="UserRoleId" name="RoleId" />
+
+
+                                    <div class="col-12">
+                                        <label for="yourEmail" class="form-label">Email</label>
+                                        <input asp-for="Email" type="email" name="email" class="form-control" id="yourEmail" required placeholder="example@email.com">
+                                        <div class="invalid-feedback">Required!</div>
+                                    </div>
+
+
+
+                                    <div class="col-12">
+                                        <label for="Password" class="form-label">Password</label>
+                                        <input asp-for="Password" type="password" name="password" class="form-control" id="Password" required placeholder="Enter Password">
+                                        <div class="invalid-feedback">Required!</div>
+                                    </div>
+
+
+
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100" style="background-color:#a5c422" type="submit">Sign in</button>
+                                    </div>
+                                    @*  <div class="col-12">
+                                    <button class="btn btn-danger w-100"  type="reset">Cancel</button>
+                                    </div>*@
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+
+
+</main>
+
+<!-- End #main -->

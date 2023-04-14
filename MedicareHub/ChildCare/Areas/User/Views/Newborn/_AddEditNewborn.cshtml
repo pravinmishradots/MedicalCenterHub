@@ -1,0 +1,56 @@
+﻿@using ChildCare.Models.Common
+@model ChildCare.DTOs.RegistrationViewModel
+
+@{
+
+    var headerModel = new ModalHeader { Heading = String.Format("{0} Provider", @Model.UserId == Guid.Empty ? "Add" : "Edit") };
+}
+
+
+<div id="frm-add-edit-treatment">
+    <form method="post" action="/SuperAdmin/DoctorManager/AddEditProvider">
+        <partial name="_ModalHeader" model="headerModel" />
+        <input type="hidden" asp-for="UserId" />
+        <div id="validation-summary" class="alert-danger"></div>
+        <div class="modal-body box-body">
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" asp-for="DisplayName"></label>
+                <div class="col-sm-10 text-red">
+                    <input type="text" title="*required" asp-for="DisplayName" class="form-control" required />
+                    <span asp-validation-for="DisplayName" class="field-validation-error"> </span>
+                </div>
+            </div><br />
+
+            <div class="form-group row">
+
+                <label class="col-sm-2 col-form-label" asp-for="Email"></label>
+                <div class="col-sm-10 text-red">
+                    <input type="text" title="*required" asp-for="Email" class="form-control" required />
+                    <span asp-validation-for="Email" class="field-validation-error"> </span>
+                </div>
+            </div><br />
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" asp-for="PhoneNumber"></label>
+                <div class="col-sm-10">
+                    <input type="text" title="required" asp-for="PhoneNumber" class="form-control" required />
+                    <span asp-validation-for="PhoneNumber" class="field-validation-error"> </span>
+                </div>
+            </div><br />
+            @*     <div class="form-group row form-switch">
+
+            <div class="col-sm-3" style="margin-left: -40px;">
+            <label class="col-form-label form-check-label" asp-for="IsActive"></label>
+            </div>
+            <div class="col-sm-9">
+            <label class="form-check-label">
+            <input type="checkbox" asp-for="IsActive" class="form-check-input" />
+            <span class="slider round"></span>
+            </label>
+            </div>
+            </div></br>*@
+        </div>
+        <partial name="_ModalFooter" model="new ModalFooter { }" />
+    </form>
+</div>
+

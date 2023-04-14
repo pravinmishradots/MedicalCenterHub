@@ -1,0 +1,12 @@
+﻿
+@model ChildCare.Models.Common.Modal
+@using (Html.BeginForm())
+{
+        <partial name="_ModalHeader" model="Model.Header" />
+        <div id="validation-summary"></div>
+        <div class="modal-body">
+            <p class="del-msg">@Model.Message</p>
+        </div>
+        <partial name="_ModalFooter" model="Model.Footer" />
+}
+

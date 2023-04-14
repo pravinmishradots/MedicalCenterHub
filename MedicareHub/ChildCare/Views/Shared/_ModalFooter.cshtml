@@ -1,0 +1,10 @@
+﻿
+@model ChildCare.Models.Common.ModalFooter
+<div class="modal-footer">
+    <button type="button" id="@Model.CancelButtonID" class="btn btn-secondary @Model.CancelButtonCss" data-bs-dismiss="modal">@Model.CancelButtonText</button>
+
+    @if (!Model.OnlyCancelButton)
+    {
+            <button type="submit" class="btn btn-primary @Model.SubmitButtonCss" id="@Model.SubmitButtonID">@Model.SubmitButtonText</button>
+    }
+</div>

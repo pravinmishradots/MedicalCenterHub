@@ -1,0 +1,99 @@
+﻿@using ChildCareCore.SiteKeys;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/images/mh.png" rel="icon">
+
+    <link href="~/images/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="~/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="~/vendor/quill/quill.snow.css" rel="stylesheet" />
+    <link href="~/vendor/quill/quill.bubble.css" rel="stylesheet" />
+    <link href="~/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="~/vendor/datatables.bootstrap.css" rel="stylesheet" />
+    <link href="~/vendor/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+@*    <link href="~/vendor/simple-datatables/style.css" rel="stylesheet" />  *@
+
+
+
+    <!-- Template Main CSS File -->
+    <link href="~/css/user/style.css" rel="stylesheet" />
+    @RenderSection("Styles", required: false)
+  
+
+
+
+</head>
+<body>
+    <partial name="_Header.cshtml" />
+    <partial name="_Sidebar.cshtml" />
+
+
+    <div id="main" class="main">
+
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <section class="content">
+                @RenderBody()
+            </section>
+
+            <!-- /.content -->
+        </div>
+
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <partial name="_Footer.cshtml" />
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+        <!-- area super admin JS Files -->
+    <script src="~/js/jquery-1.10.2.min.js"></script>
+
+
+
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+
+@*<script src="~/area/plugins/bootstrap/js/bootstrap.bundle.js"></script>*@
+    <script src="~/area/plugins/quill/quill.min.js"></script>
+    <script src="~/area/plugins/tinymce/tinymce.min.js"></script>
+    <script src="~/js/mainlayout/jquery.validate.js"></script>
+    <script src="~/js/mainlayout/jquery.validate.min.js"></script>
+    <script src="~/js/mainlayout/jquery.validate.unobtrusive.js"></script>
+
+    <script src="~/area/plugins/datatables/jquery.datatables.js"></script>
+<script src="~/area/plugins/datatables/datatables.bootstrap.js"></script>
+ 
+
+
+    <script src="~/js/global/global.js"></script>
+    <script src="~/js/registration/main.js"></script>
+    <script src="~/area/plugins/alertify/alertify.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)<!--End area -->
+
+
+
+    <script type="text/javascript">
+        $("#messageBox").delay(3000).fadeOut('slow');
+        var domain = '@(SiteKeys.Domain)';
+
+
+    </script>
+
+</body>
+
+</html>

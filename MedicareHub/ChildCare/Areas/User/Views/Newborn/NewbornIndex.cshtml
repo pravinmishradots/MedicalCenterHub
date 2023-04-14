@@ -1,0 +1,58 @@
+﻿@using ChildCare.Models.Common;
+@using static ChildCare.Code.LIBS.Enums;
+
+@{
+    ViewData["Title"] = "NewbornIndex";
+    Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
+}
+
+<section>
+    <div class="card">
+        <div class="card-header">
+            <div class="card-tools">
+                <button type="button" class="btn btn-success" title="Add New Provider" data-bs-toggle="modal" data-bs-target="#modal-add-edit-newborn" href="/User/Newborn/AddEditNewborn">
+                    <i class="bi bi-align-middle"></i>  Add New Provider
+                </button>
+            </div>
+        </div>
+
+        <div class="card-body table-responsive" style="margin-top:2%">
+            <table id="grid-newborn-list" class="table table-bordered table-striped table-condensed">
+                <thead>
+                    <tr>
+                        <th>BornId</th>
+                        <th>#</th>
+                        <th> Child Name</th>
+                        <th>Mother Name</th>
+                        <th>Father Name</th>
+                        <th>DOB</th>
+                        <th>Weight</th>
+                        <th>Delivery </th>
+                        <th>Gender</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                        <th>Photo</th>
+                        @*   <th>Active</th>*@
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot></tfoot>
+            </table>
+        </div>
+    </div>
+
+</section>
+
+@{
+    <partial name="_modal" model='new Modal { ID="modal-add-edit-newborn" , AreaLabeledId ="modal-add-edit-newborn-label" , Size = ModalSize.Large }' />
+    <partial name="_modal" model='new Modal { ID="modal-delete-newborn" , AreaLabeledId ="modal-delete-newborn-label" , Size = ModalSize.Small }' />
+}
+
+@section Scripts{
+    @*   <script src="~/js/bootstrap-switch.js"></script>*@
+
+
+    <script src="~/custom/newborn/newbornchild.js"></script>
+    }
+
